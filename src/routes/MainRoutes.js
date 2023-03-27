@@ -16,9 +16,11 @@ const UtilsShadow = Loadable(lazy(() => import('../views/utilities/Shadow')));
 const UtilsMaterialIcons = Loadable(lazy(() => import('../views/utilities/MaterialIcons')));
 const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIcons')));
 
-// sample page routing
-const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
-const uploadFile = Loadable(lazy(() => import('../views/sample-page/uploadFile')));
+const uploadFile = Loadable(lazy(() => import('../views/utilities/uploadFile')));
+const BrokersExchanges = Loadable(lazy(() => import('../views/utilities/BrokersExchanges')));
+const CreateBroker = Loadable(lazy(() => import('../views/utilities/CreateBroker')));
+const EditBroker = Loadable(lazy(() => import('../views/utilities/EditBroker')));
+const TradingAlgo = Loadable(lazy(() => import('../views/utilities/TradingAlgo')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -29,28 +31,32 @@ const MainRoutes = () => {
         <Route
             path={[
                 '/dashboard/default',
-
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
                 '/icons/tabler-icons',
                 '/icons/material-icons',
-                '/upload-file',
-                '/sample-page'
+                '/utils/upload-file',
+                '/utils/brokers-and-exchanges',
+                '/utils/create-broker',
+                '/utils/edit-broker',
+                '/utils/trading-algo'
             ]}
         >
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
                     <AuthGuard>
                         <Route path="/dashboard/default" component={DashboardDefault} />
-
                         <Route path="/utils/util-typography" component={UtilsTypography} />
                         <Route path="/utils/util-color" component={UtilsColor} />
                         <Route path="/utils/util-shadow" component={UtilsShadow} />
                         <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                         <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
-                        <Route path="/upload-file" component={uploadFile} />
-                        <Route path="/sample-page" component={SamplePage} />
+                        <Route path="/utils/upload-file" component={uploadFile} />
+                        <Route path="/utils/brokers-and-exchanges" component={BrokersExchanges} />
+                        <Route path="/utils/create-broker" component={CreateBroker} />
+                        <Route path="/utils/edit-broker" component={EditBroker} />
+                        <Route path="/utils/trading-algo" component={TradingAlgo} />
                     </AuthGuard>
                 </Switch>
             </MainLayout>

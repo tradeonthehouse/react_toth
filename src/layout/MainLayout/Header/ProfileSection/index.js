@@ -6,6 +6,7 @@ import configData from '../../../../config';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import {
     Avatar,
+    Link,
     Card,
     CardContent,
     Chip,
@@ -35,7 +36,7 @@ import UpgradePlanCard from './UpgradePlanCard';
 import { LOGOUT } from './../../../../store/actions';
 
 // assets
-import { IconLogout, IconSearch, IconSettings } from '@tabler/icons';
+import { IconLogout, IconSearch, IconSettings, IconArrowRight } from '@tabler/icons';
 import User1 from './../../../../assets/images/users/user-round.svg';
 
 // style const
@@ -221,10 +222,10 @@ const ProfileSection = () => {
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
-                                                <Typography variant="subtitle2">Project Admin</Typography>
+                                                <Typography variant="subtitle2">Admin</Typography>
                                             </Grid>
                                         </Grid>
-                                        <OutlinedInput
+                                        {/* <OutlinedInput
                                             className={classes.searchControl}
                                             id="input-search-profile"
                                             value={value}
@@ -239,10 +240,10 @@ const ProfileSection = () => {
                                             inputProps={{
                                                 'aria-label': 'weight'
                                             }}
-                                        />
+                                        /> */}
                                         <Divider />
                                         <PerfectScrollbar className={classes.ScrollHeight}>
-                                            <UpgradePlanCard />
+                                            {/* <UpgradePlanCard /> */}
                                             <Divider />
                                             <Card className={classes.card}>
                                                 <CardContent>
@@ -250,20 +251,16 @@ const ProfileSection = () => {
                                                         <Grid item>
                                                             <Grid item container alignItems="center" justifyContent="space-between">
                                                                 <Grid item>
-                                                                    <Typography variant="subtitle1">Start DND Mode</Typography>
+                                                                   <Link href="/utils/create-broker" color="inherit" style={{textDecoration: 'none'}}><Typography variant="subtitle1">Add Broker</Typography></Link>
                                                                 </Grid>
                                                                 <Grid item>
-                                                                    <Switch
-                                                                        color="primary"
-                                                                        checked={sdm}
-                                                                        onChange={(e) => setSdm(e.target.checked)}
-                                                                        name="sdm"
-                                                                        size="small"
-                                                                    />
+                                                                <ListItemIcon>
+                                                                    <IconArrowRight stroke={2.5} size="1.3rem" />
+                                                                </ListItemIcon>
                                                                 </Grid>
                                                             </Grid>
                                                         </Grid>
-                                                        <Grid item>
+                                                        {/* <Grid item>
                                                             <Grid item container alignItems="center" justifyContent="space-between">
                                                                 <Grid item>
                                                                     <Typography variant="subtitle1">Allow Notifications</Typography>
@@ -277,7 +274,7 @@ const ProfileSection = () => {
                                                                     />
                                                                 </Grid>
                                                             </Grid>
-                                                        </Grid>
+                                                        </Grid> */}
                                                     </Grid>
                                                 </CardContent>
                                             </Card>
@@ -290,7 +287,7 @@ const ProfileSection = () => {
                                                     onClick={handleLogout}
                                                 >
                                                     <ListItemIcon>
-                                                        <IconLogout stroke={1.5} size="1.3rem" />
+                                                        <IconLogout stroke={2.0} size="1.3rem" />
                                                     </ListItemIcon>
                                                     <ListItemText primary={<Typography variant="body2">Logout</Typography>} />
                                                 </ListItemButton>

@@ -61,7 +61,7 @@ const UpgradePlanCard = () => {
     return (
         <Card className={classes.card}>
             <CardContent>
-                <Grid container direction="column" spacing={2}>
+                {/* <Grid container direction="column" spacing={2}>
                     <Grid item>
                         <Typography variant="h4">
                             React Nodejs Berry
@@ -87,7 +87,7 @@ const UpgradePlanCard = () => {
                             </AnimateButton>
                         </Stack>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </CardContent>
         </Card>
     );
