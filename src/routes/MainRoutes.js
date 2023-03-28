@@ -21,6 +21,7 @@ const BrokersExchanges = Loadable(lazy(() => import('../views/utilities/BrokersE
 const CreateBroker = Loadable(lazy(() => import('../views/utilities/CreateBroker')));
 const EditBroker = Loadable(lazy(() => import('../views/utilities/EditBroker')));
 const TradingAlgo = Loadable(lazy(() => import('../views/utilities/TradingAlgo')));
+const ProfilePage = Loadable(lazy(() => import('../views/utilities/ProfilePage')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -36,11 +37,12 @@ const MainRoutes = () => {
                 '/utils/util-shadow',
                 '/icons/tabler-icons',
                 '/icons/material-icons',
-                '/utils/upload-file',
+                '/utils/create-strategy',
                 '/utils/brokers-and-exchanges',
                 '/utils/create-broker',
                 '/utils/edit-broker',
-                '/utils/trading-algo'
+                '/utils/trading-algo',
+                '/utils/profile-page'
             ]}
         >
             <MainLayout>
@@ -52,11 +54,12 @@ const MainRoutes = () => {
                         <Route path="/utils/util-shadow" component={UtilsShadow} />
                         <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                         <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
-                        <Route path="/utils/upload-file" component={uploadFile} />
+                        <Route path="/utils/create-strategy" component={uploadFile} />
                         <Route path="/utils/brokers-and-exchanges" component={BrokersExchanges} />
                         <Route path="/utils/create-broker" component={CreateBroker} />
                         <Route path="/utils/edit-broker" component={EditBroker} />
                         <Route path="/utils/trading-algo" component={TradingAlgo} />
+                        <Route path="/utils/profile-page" component={ProfilePage} />
                     </AuthGuard>
                 </Switch>
             </MainLayout>

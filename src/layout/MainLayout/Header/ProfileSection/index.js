@@ -36,7 +36,7 @@ import UpgradePlanCard from './UpgradePlanCard';
 import { LOGOUT } from './../../../../store/actions';
 
 // assets
-import { IconLogout, IconSearch, IconSettings, IconArrowRight } from '@tabler/icons';
+import { IconLogout, IconSearch, IconSettings, IconArrowRight, IconUser, IconKey, IconLayoutGridAdd, IconId } from '@tabler/icons';
 import User1 from './../../../../assets/images/users/user-round.svg';
 
 // style const
@@ -222,7 +222,7 @@ const ProfileSection = () => {
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
-                                                <Typography variant="subtitle2">Admin</Typography>
+                                                <Typography style={{marginLeft:2}} variant="subtitle2">Admin</Typography>
                                             </Grid>
                                         </Grid>
                                         {/* <OutlinedInput
@@ -242,44 +242,54 @@ const ProfileSection = () => {
                                             }}
                                         /> */}
                                         <Divider />
-                                        <PerfectScrollbar className={classes.ScrollHeight}>
+                                        {/* <PerfectScrollbar className={classes.ScrollHeight}> */}
                                             {/* <UpgradePlanCard /> */}
                                             <Divider />
-                                            <Card className={classes.card}>
-                                                <CardContent>
-                                                    <Grid container spacing={3} direction="column">
-                                                        <Grid item>
-                                                            <Grid item container alignItems="center" justifyContent="space-between">
-                                                                <Grid item>
-                                                                   <Link href="/utils/create-broker" color="inherit" style={{textDecoration: 'none'}}><Typography variant="subtitle1">Add Broker</Typography></Link>
-                                                                </Grid>
-                                                                <Grid item>
-                                                                <ListItemIcon>
-                                                                    <IconArrowRight stroke={2.5} size="1.3rem" />
-                                                                </ListItemIcon>
-                                                                </Grid>
-                                                            </Grid>
-                                                        </Grid>
-                                                        {/* <Grid item>
-                                                            <Grid item container alignItems="center" justifyContent="space-between">
-                                                                <Grid item>
-                                                                    <Typography variant="subtitle1">Allow Notifications</Typography>
-                                                                </Grid>
-                                                                <Grid item>
-                                                                    <Switch
-                                                                        checked={notification}
-                                                                        onChange={(e) => setNotification(e.target.checked)}
-                                                                        name="sdm"
-                                                                        size="small"
-                                                                    />
-                                                                </Grid>
-                                                            </Grid>
-                                                        </Grid> */}
-                                                    </Grid>
-                                                </CardContent>
-                                            </Card>
-                                            <Divider />
                                             <List component="nav" className={classes.navContainer}>
+                                                <Link href="/utils/profile-page" color="inherit" style={{textDecoration: 'none'}}>
+                                                    <ListItemButton
+                                                        className={classes.listItem}
+                                                        sx={{ borderRadius: customization.borderRadius + 'px' }}
+                                                        selected={selectedIndex === 4}>
+                                                        <ListItemIcon>
+                                                            <IconUser stroke={2.0} size="1.3rem" />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary={<Typography variant="body2">Profile</Typography>} />
+                                                    </ListItemButton>
+                                                </Link>
+                                                <Link href="/utils/brokers-and-exchanges" color="inherit" style={{textDecoration: 'none'}}>
+                                                    <ListItemButton
+                                                        className={classes.listItem}
+                                                        sx={{ borderRadius: customization.borderRadius + 'px' }}
+                                                        selected={selectedIndex === 4}>
+                                                        <ListItemIcon>
+                                                            <IconLayoutGridAdd stroke={2.0} size="1.3rem" />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary={<Typography variant="body2">Broker & Exchanges</Typography>} />
+                                                    </ListItemButton>
+                                                </Link>
+                                                <Link href="" color="inherit" style={{textDecoration: 'none'}}>
+                                                    <ListItemButton
+                                                        className={classes.listItem}
+                                                        sx={{ borderRadius: customization.borderRadius + 'px' }}
+                                                        selected={selectedIndex === 4}>
+                                                        <ListItemIcon>
+                                                            <IconId stroke={2.0} size="1.3rem" />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary={<Typography variant="body2">Subscriptions</Typography>} />
+                                                    </ListItemButton>
+                                                </Link>
+                                                <Link href="" color="inherit" style={{textDecoration: 'none'}}>
+                                                    <ListItemButton
+                                                        className={classes.listItem}
+                                                        sx={{ borderRadius: customization.borderRadius + 'px' }}
+                                                        selected={selectedIndex === 4}>
+                                                        <ListItemIcon>
+                                                            <IconKey stroke={2.0} size="1.3rem" />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary={<Typography variant="body2">Change Password</Typography>} />
+                                                    </ListItemButton>
+                                                </Link>
                                                 <ListItemButton
                                                     className={classes.listItem}
                                                     sx={{ borderRadius: customization.borderRadius + 'px' }}
@@ -292,7 +302,7 @@ const ProfileSection = () => {
                                                     <ListItemText primary={<Typography variant="body2">Logout</Typography>} />
                                                 </ListItemButton>
                                             </List>
-                                        </PerfectScrollbar>
+                                        {/* </PerfectScrollbar> */}
                                     </CardContent>
                                 </MainCard>
                             </ClickAwayListener>

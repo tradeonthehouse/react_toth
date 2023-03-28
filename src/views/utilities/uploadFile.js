@@ -17,7 +17,8 @@ import {
     TableContainer,
     TableHead,
     TablePagination,
-    TableRow
+    TableRow,
+    MenuItem
 
 } from '@material-ui/core';
 
@@ -86,10 +87,26 @@ const useStyles = makeStyles((theme) => ({
     createData('CAP', '20221223', '20221223', '22.23', '22.23', '22.23', '22.23'),
   ];
 
+const market = [
+    {
+        value: 'null',
+        label: 'Select Market'
+    },
+    {
+        value: 'india',
+        label: 'India'
+    },
+    {
+        value: 'us',
+        label: 'US'
+    },
+];
+
 const UploadFile = () => {
     const classes = useStyles();
     const [resFlag, setResFlag] = useState(false);
     const [file, setFile] = useState(0);
+    const [marketValue, setMarketValue] = React.useState('null');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
   
@@ -129,10 +146,25 @@ const UploadFile = () => {
         <MainCard title="Upload File">
             <Grid container spacing={2}>
                 <Grid item xs={4}>
-                    <TextField type="file" onChange={handleFileUpload} />
+                    <TextField size="small" type="file" onChange={handleFileUpload} />
+                </Grid>
+                <Grid item xs={2.8}>
+                    <TextField
+                        id="standard-select-currency"
+                        select
+                        value={marketValue}
+                        size="small"
+                        onChange={(e) => setMarketValue(e.target.value)}
+                        style={{width:200}}>
+                            {market.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}
+                    </TextField>
                 </Grid>
                 <Grid item xs={2}>
-                    <Button onClick={handleSubmit} variant="contained" component="label" style={{marginTop:5}}>
+                    <Button onClick={handleSubmit} variant="contained" component="label">
                         Upload
                     </Button>
                 </Grid>
@@ -140,7 +172,7 @@ const UploadFile = () => {
             <Divider style={{marginTop:25}} className={classes.divider} />
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <Typography style={{marginTop:5,marginLeft:5}} variant="h5">File Response :</Typography>
+                    <Typography style={{marginTop:5,marginLeft:5}} variant="h5">Strategy Response :</Typography>
                     <Paper sx={{ width: '100%', overflow: 'hidden', border:1,marginTop:1 }}>
                         <TableContainer sx={{ maxHeight: 440 }}>
                             <Table stickyHeader aria-label="sticky table">

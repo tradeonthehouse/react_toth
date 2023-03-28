@@ -1,11 +1,10 @@
 import { dashboard } from './dashboard';
 import { others } from './others';
-import { strategies } from './strategies';
 
 //-----------------------|| MENU ITEMS ||-----------------------//
 
 const menuItems = {
-    items: [dashboard, strategies, others]
+    items: [dashboard, others]
 };
 
 export default menuItems;

@@ -78,6 +78,7 @@ const BrokersExchanges = ({ isLoading }) => {
                                         <Typography variant="h4">List of Brokers</Typography>
                                     </Grid>
                                     <Grid item>
+                                        <Link href="/utils/create-broker" color="inherit" style={{textDecoration: 'none'}}><Button size="small" variant="outlined" component="label" style={{marginRight:30,marginTop:-10}}>Add Broker</Button></Link>
                                         <MoreHorizOutlinedIcon
                                             fontSize="small"
                                             className={classes.primaryLight}
@@ -101,8 +102,7 @@ const BrokersExchanges = ({ isLoading }) => {
                                                 horizontal: 'right'   
                                             }}
                                         >
-                                            
-                                            <Link href="/utils/create-broker" color="inherit" style={{textDecoration: 'none'}}><MenuItem onClick={handleClose} >ADD BROKER</MenuItem></Link>
+                                                       
                                             <MenuItem onClick={handleClose} > EXPORT AS CSV</MenuItem>
                                         </Menu>
                                     </Grid>
