@@ -147,7 +147,10 @@ const RestRegister = ({ ...others }) => {
                                     response = error.response.data.username.msg+"\n";
                                 }
                                 if(error.response.data.email != undefined){
-                                    response += error.response.data.email.msg;
+                                    response += error.response.data.email.msg+"\n";
+                                }
+                                if(error.response.data.password != undefined){
+                                    response += "Password : "+error.response.data.password;
                                 }
                                 alert(response)
                                 setStatus({ success: false });
