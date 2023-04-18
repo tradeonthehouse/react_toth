@@ -133,7 +133,8 @@ const UploadFile = () => {
         try {
             const response = await axios.post(configData.API_SERVER + 'users/uploadmonthlymodel', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjgyNDQzNTE4fQ.uOYqWGebpUM1xQa6x4pOygVQglR0zDKy1_3adebyw9M'
                 }
             });
             alert(response.data.msg);

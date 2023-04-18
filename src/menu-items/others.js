@@ -1,5 +1,5 @@
 // assets
-import { IconBrandFramer, IconFileUpload, Icon3dCubeSphere, IconHelp, IconUser, IconKey, IconId, IconBellRinging, IconSettings, IconFileInvoice, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd } from '@tabler/icons';
+import { IconBrandFramer, IconFileUpload, IconStars, Icon3dCubeSphere, IconHelp, IconUser, IconKey, IconId, IconBellRinging, IconSettings, IconFileInvoice, IconTypography, IconPalette, IconShadow, IconWindmill, IconLayoutGridAdd } from '@tabler/icons';
 
 // constant
 const icons = {
@@ -17,7 +17,8 @@ const icons = {
     IconId: IconId,
     IconKey: IconKey,
     IconFileUpload: IconFileUpload,
-    Icon3dCubeSphere: Icon3dCubeSphere
+    Icon3dCubeSphere: Icon3dCubeSphere,
+    IconStars: IconStars
 };
 
 //-----------------------|| UTILITIES MENU ITEMS ||-----------------------//
@@ -29,7 +30,7 @@ export const others = {
     children: [
         {
             id: 'trading-algo-page',
-            title: 'Trading Algo',
+            title: 'Strategies',
             type: 'item',
             url: '/utils/trading-algo',
             icon: icons['Icon3dCubeSphere'],
@@ -44,10 +45,34 @@ export const others = {
             breadcrumbs: false
         },
         {
+            id: 'place-holder1',
+            title: 'Place Holder1',
+            type: 'item',
+            url: '/utils/place-holder1',
+            icon: icons['IconStars'],
+            breadcrumbs: false
+        },
+        {
+            id: 'place-holder2',
+            title: 'Place Holder2',
+            type: 'item',
+            url: '/utils/place-holder2',
+            icon: icons['IconStars'],
+            breadcrumbs: false
+        },
+        {
+            id: 'place-holder3',
+            title: 'Place Holder3',
+            type: 'item',
+            url: '/utils/place-holder3',
+            icon: icons['IconStars'],
+            breadcrumbs: false
+        },
+        {
             id: 'invoices',
             title: 'Invoices',
             type: 'item',
-            url: '',
+            url: '/utils/invoices',
             icon: icons['IconFileInvoice'],
             breadcrumbs: false
         },
@@ -55,7 +80,7 @@ export const others = {
             id: 'notification',
             title: 'Notification',
             type: 'item',
-            url: '',
+            url: '/utils/notifications',
             icon: icons['IconBellRinging'],
             breadcrumbs: false
         },
@@ -63,7 +88,7 @@ export const others = {
             id: 'help-support',
             title: 'Help & Support',
             type: 'item',
-            url: '',
+            url: '/utils/help-support',
             icon: icons['IconHelp'],
             breadcrumbs: false
         },

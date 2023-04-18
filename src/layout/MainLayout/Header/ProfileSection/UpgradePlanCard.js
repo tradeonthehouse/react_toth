@@ -2,10 +2,9 @@ import React from 'react';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-import { Button, Card, CardContent, Grid, Link, Stack, Typography } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 
 // project imports
-import AnimateButton from './../../../../ui-component/extended/AnimateButton';
 
 // style constant
 const useStyles = makeStyles((theme) => ({

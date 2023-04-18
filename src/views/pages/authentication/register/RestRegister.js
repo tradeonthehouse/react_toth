@@ -129,15 +129,27 @@ const RestRegister = ({ ...others }) => {
                                 email: values.email
                             })
                             .then(function (response) {
+                                console.log(response.data)
                                 if (response.data.success) {
                                     history.push('/login');
+                                    alert(response.data.msg)
                                 } else {
                                     setStatus({ success: false });
                                     setErrors({ submit: response.data.msg });
+                                    // alert(response.data.msg)
                                     setSubmitting(false);
                                 }
                             })
                             .catch(function (error) {
+                                console.log(error.response.data)
+                                let response = ""
+                                if(error.response.data.username != undefined){
+                                    response = error.response.data.username.msg+"\n";
+                                }
+                                if(error.response.data.email != undefined){
+                                    response += error.response.data.email.msg;
+                                }
+                                alert(response)
                                 setStatus({ success: false });
                                 setErrors({ submit: error.response.data.msg });
                                 setSubmitting(false);

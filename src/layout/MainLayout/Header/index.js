@@ -10,6 +10,7 @@ import LogoSection from '../LogoSection';
 import SearchSection from './SearchSection';
 import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
+// import LandingMenus from './LandingMenus';
 
 // assets
 import { IconMenu2 } from '@tabler/icons';
@@ -59,7 +60,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
             </div>
 
             {/* header search */}
-            <SearchSection theme="light" />
+            {/* <LandingMenus theme="light" /> */}
             <div className={classes.grow} />
             <div className={classes.grow} />
 

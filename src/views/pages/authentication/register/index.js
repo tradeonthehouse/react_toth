@@ -11,6 +11,7 @@ import AuthCardWrapper from './../AuthCardWrapper';
 import Logo from './../../../../ui-component/Logo';
 import RestRegister from './RestRegister';
 import AuthFooter from './../../../../ui-component/cards/AuthFooter';
+import Header from '../Landing/Header';
 
 // assets
 
@@ -21,6 +22,8 @@ const Register = () => {
     const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
+        <>
+        <Header />  
         <AuthWrapper1>
             <Grid container direction="column" justifyContent="flex-end" sx={{ minHeight: '100vh' }}>
                 <Grid item xs={12}>
@@ -42,13 +45,13 @@ const Register = () => {
                                         >
                                             <Grid item>
                                                 <Stack alignItems="center" justifyContent="center" spacing={1}>
-                                                    <Typography
+                                                    {/* <Typography
                                                         color={theme.palette.secondary.main}
                                                         gutterBottom
                                                         variant={matchDownSM ? 'h3' : 'h2'}
                                                     >
                                                         Sign up
-                                                    </Typography>
+                                                    </Typography> */}
                                                     <Typography variant="caption" fontSize="16px" textAlign={matchDownSM ? 'center' : ''}>
                                                         Enter your credentials to continue
                                                     </Typography>
@@ -59,7 +62,7 @@ const Register = () => {
                                     <Grid item xs={12}>
                                         <RestRegister />
                                     </Grid>
-                                    <Grid item xs={12}>
+                                    {/* <Grid item xs={12}>
                                         <Divider />
                                     </Grid>
                                     <Grid item xs={12}>
@@ -73,7 +76,7 @@ const Register = () => {
                                                 Have an account?
                                             </Typography>
                                         </Grid>
-                                    </Grid>
+                                    </Grid> */}
                                 </Grid>
                             </AuthCardWrapper>
                         </Grid>
@@ -84,6 +87,7 @@ const Register = () => {
                 </Grid>
             </Grid>
         </AuthWrapper1>
+        </>
     );
 };
 

@@ -13,7 +13,7 @@ import { gridSpacing } from './../../store/constant';
 
 const Typography = () => {
     return (
-        <MainCard title="Basic Typography" secondary={<SecondaryAction link="https://next.material-ui.com/system/typography/" />}>
+        <MainCard title="Basic Typography" secondary={<SecondaryAction />}>
             <Grid container spacing={gridSpacing}>
                 <Grid item xs={12} sm={6}>
                     <SubCard title="Heading">

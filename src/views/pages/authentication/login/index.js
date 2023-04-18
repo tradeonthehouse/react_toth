@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@material-ui/core';
-import { Divider, Grid, Stack, Typography, useMediaQuery } from '@material-ui/core';
+import { Divider, Grid, Stack, Typography, useMediaQuery, Toolbar, AppBar } from '@material-ui/core';
 
 // project imports
 import AuthWrapper1 from './../AuthWrapper1';
@@ -11,6 +11,7 @@ import Logo from './../../../../ui-component/Logo';
 import AuthCardWrapper from './../AuthCardWrapper';
 import RestLogin from './RestLogin';
 import AuthFooter from './../../../../ui-component/cards/AuthFooter';
+import Header from '../Landing/Header';
 
 // assets
 
@@ -20,13 +21,15 @@ const Login = () => {
     const theme = useTheme();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
 
-    return (
+    return ( 
+        <>
+        <Header />  
         <AuthWrapper1>
             <Grid container direction="column" justifyContent="flex-end" sx={{ minHeight: '100vh' }}>
                 <Grid item xs={12}>
-                    <Grid container justifyContent="center" alignItems="center" sx={{ minHeight: 'calc(100vh - 68px)' }}>
+                    <Grid container justifyContent="center" alignItems="center" sx={{ minHeight: 'calc(100vh - 68px)' }} >
                         <Grid item sx={{ m: { xs: 1, sm: 3 }, mb: 0 }}>
-                            <AuthCardWrapper>
+                            <AuthCardWrapper style={{marginTop:-90}}>
                                 <Grid container spacing={2} alignItems="center" justifyContent="center">
                                     <Grid item sx={{ mb: 3 }}>
                                         <RouterLink to="#">
@@ -42,13 +45,13 @@ const Login = () => {
                                         >
                                             <Grid item>
                                                 <Stack alignItems="center" justifyContent="center" spacing={1}>
-                                                    <Typography
+                                                    {/* <Typography
                                                         color={theme.palette.secondary.main}
                                                         gutterBottom
                                                         variant={matchDownSM ? 'h3' : 'h2'}
                                                     >
                                                         Hi, Welcome Back
-                                                    </Typography>
+                                                    </Typography> */}
                                                     <Typography variant="caption" fontSize="16px" textAlign={matchDownSM ? 'center' : ''}>
                                                         Enter your credentials to continue
                                                     </Typography>
@@ -59,7 +62,7 @@ const Login = () => {
                                     <Grid item xs={12}>
                                         <RestLogin />
                                     </Grid>
-                                    <Grid item xs={12}>
+                                    {/* <Grid item xs={12}>
                                         <Divider />
                                     </Grid>
                                     <Grid item xs={12}>
@@ -73,7 +76,7 @@ const Login = () => {
                                                 Don't have an account?
                                             </Typography>
                                         </Grid>
-                                    </Grid>
+                                    </Grid> */}
                                 </Grid>
                             </AuthCardWrapper>
                         </Grid>
@@ -84,6 +87,7 @@ const Login = () => {
                 </Grid>
             </Grid>
         </AuthWrapper1>
+        </>
     );
 };
 

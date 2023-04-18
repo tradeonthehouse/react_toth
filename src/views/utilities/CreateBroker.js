@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import configData from '../../../src/config';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
@@ -92,6 +94,10 @@ const Brokers = [
         label: 'Select Broker'
     },
     {
+        value: 'alpaca',
+        label: 'Alpaca'
+    },
+    {
         value: 'zerodha',
         label: 'Zerodha'
     },
@@ -125,12 +131,39 @@ const initialSelected = [
 
 const CreateBroker = ({ isLoading }) => {
     const classes = useStyles();
-    const [brokerValue, setBrokerValue] = React.useState('none');
-    const [ExchangeName, setExchangesName] = React.useState([]);
-    const [fieldFlag, setFieldFlag] = React.useState(false);
+    const [brokerValue, setBrokerValue] = useState('none');
+    const [ExchangeName, setExchangesName] = useState([]);
+    const [fieldFlag, setFieldFlag] = useState(false);
+    const [api_key, setApi_key] = useState("")
+    const [loading, setLoading] = useState(false);
+    const [api_secret, setApi_secret] = useState("")
+
+    const AddBroker = () => {
+        const temp = JSON.parse(localStorage.getItem('berry-account'));
+        console.log(temp);
+        if(api_key != "" && api_secret != ""){
+            setLoading(true);
+            axios
+            .post(configData.API_SERVER + 'users/addbroker',{
+                Broker_name : brokerValue,
+                Cust_Id : '10005',
+                API_Key  : api_key,
+                API_Secret  : api_secret ,
+                Username  : '',
+                Password  : '',
+                Market_Types : '' 
+            })
+            .then((result) => {
+                alert(result.data)
+            })
+            .catch((e) => console.log(e))
+            .finally(() => setLoading(false));
+        }
+    }
+
 
     const handleBroker = (event) => {
-        if(event.target.value == "zerodha" || event.target.value == "upstox"){
+        if(event.target.value == "zerodha" || event.target.value == "upstox" || event.target.value == "alpaca"){
             setFieldFlag(true)
         }else{
             setFieldFlag(false)
@@ -242,6 +275,7 @@ const CreateBroker = ({ isLoading }) => {
                                                     <Typography variant="subtitle1" color="inherit">api_key</Typography>
                                                     <TextField
                                                         id="api_key"
+                                                        onChange={(e) => setApi_key(e.target.value)}
                                                         size="small"
                                                         style={{width:250,marginTop:8}}>
                                                     </TextField>
@@ -250,9 +284,10 @@ const CreateBroker = ({ isLoading }) => {
                                                 <Typography variant="subtitle1" color="inherit">api_secret</Typography>
                                                 <TextField
                                                         id="api_secret"
+                                                        onChange={(e) => setApi_secret(e.target.value)}
                                                         size="small"
                                                         style={{width:250,marginTop:8}}>
-                                                    </TextField>
+                                                </TextField>
                                                 </Grid>
                                                 <Grid item lg={4} md={6} sm={6} xs={12}>
                                                 <Typography variant="subtitle1" color="inherit">token</Typography>
@@ -275,7 +310,7 @@ const CreateBroker = ({ isLoading }) => {
                                             <Button href="/utils/brokers-and-exchanges" color="error" variant="contained" style={{width:120,marginLeft:25,marginTop:10}}>Back</Button>
                                         </Grid>
                                         <Grid xs={2}>
-                                            <Button color="secondary" variant="contained" style={{width:120,marginLeft:0,marginTop:10}}>Save</Button>
+                                            <Button onClick={AddBroker} color="secondary" variant="contained" style={{width:120,marginLeft:0,marginTop:10}}>Save</Button>
                                         </Grid>
                                     </Grid>
                                 </Grid>

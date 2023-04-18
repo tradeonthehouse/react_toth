@@ -268,7 +268,7 @@ const ProfileSection = () => {
                                                         <ListItemText primary={<Typography variant="body2">Broker & Exchanges</Typography>} />
                                                     </ListItemButton>
                                                 </Link>
-                                                <Link href="" color="inherit" style={{textDecoration: 'none'}}>
+                                                <Link href="/utils/subscriptions" color="inherit" style={{textDecoration: 'none'}}>
                                                     <ListItemButton
                                                         className={classes.listItem}
                                                         sx={{ borderRadius: customization.borderRadius + 'px' }}
@@ -279,7 +279,7 @@ const ProfileSection = () => {
                                                         <ListItemText primary={<Typography variant="body2">Subscriptions</Typography>} />
                                                     </ListItemButton>
                                                 </Link>
-                                                <Link href="" color="inherit" style={{textDecoration: 'none'}}>
+                                                <Link href="/utils/change-password" color="inherit" style={{textDecoration: 'none'}}>
                                                     <ListItemButton
                                                         className={classes.listItem}
                                                         sx={{ borderRadius: customization.borderRadius + 'px' }}
