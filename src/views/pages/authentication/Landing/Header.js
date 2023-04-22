@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
-
+// import { Link } from 'react-router-dom';
 // material-ui
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { Avatar, useScrollTrigger, useMediaQuery, ButtonBase, AppBar, Box, Toolbar, IconButton, Typography, Menu, Grid, Container, Button, Tooltip, MenuItem, Link } from '@material-ui/core';
@@ -10,6 +10,8 @@ import LogoSection from '../../../../layout/MainLayout/LogoSection';
 
 // assets
 import { IconMenu2, IconMail, IconUser, } from '@tabler/icons';
+import config from './../../../../config';
+import Logo from './../../../../ui-component/Logo';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -89,7 +91,11 @@ const Header = (props) => {
     return (
         <AppBar position="sticky" sx={{ bgcolor: "white" }}>
         <Toolbar>
-        <LogoSection />
+        <Link href="/home" color="inherit" style={{textDecoration: 'none'}}>
+            <ButtonBase disableRipple>
+                <Logo />
+            </ButtonBase>
+        </Link>
                   <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                       <IconButton
                       size="large"
@@ -143,12 +149,12 @@ const Header = (props) => {
                           </MenuItem>
                           <MenuItem>
                           <Link href="/register" color="inherit" style={{textDecoration: 'none'}}>
-                          <Typography textAlign="center">Sign up</Typography>
+                          <Typography textAlign="center">SIGN UP</Typography>
                           </Link>
                           </MenuItem>
                           <MenuItem>
                           <Link href="/login" color="inherit" style={{textDecoration: 'none'}}>
-                          <Typography textAlign="center">Sign in</Typography>
+                          <Typography textAlign="center">SIGN IN</Typography>
                           </Link>
                           </MenuItem>
                       </Menu>
@@ -184,10 +190,10 @@ const Header = (props) => {
                       </Link>
                       <div style={{marginTop:5,marginLeft:70}}>
                           <Link href="/register" color="inherit" style={{textDecoration: 'none'}}>
-                             <Button variant="contained" style={{width:110, height:40, marginLeft:150}}>Sign up</Button>
+                             <Button variant="contained" style={{width:110, height:40, marginLeft:150}}>SIGN UP</Button>
                           </Link>
                           <Link href="/login" color="inherit" style={{textDecoration: 'none'}}>
-                             <Button color="secondary" style={{width:110,height:40, marginLeft:20}} variant="contained" startIcon={<IconUser />}>Sign in</Button>
+                             <Button color="secondary" style={{width:110,height:40, marginLeft:20}} variant="contained" startIcon={<IconUser />}>SIGN IN</Button>
                           </Link>
                       </div>
                   </Box>

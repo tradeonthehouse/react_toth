@@ -19,6 +19,7 @@ import {
     OutlinedInput,
     TextField,
     Typography,
+    capitalize,
     useMediaQuery
 } from '@material-ui/core';
 
@@ -327,7 +328,7 @@ const RestRegister = ({ ...others }) => {
                                     variant="contained"
                                     color="secondary"
                                 >
-                                    Sign UP
+                                    SIGN UP
                                 </Button>
                             </AnimateButton>
                         </Box>

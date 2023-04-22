@@ -150,8 +150,8 @@ const About = (props) => {
                 </Grid>
             </Box>
             <Box className={classes.heroBox} style={{backgroundColor:"#673ab7",backgroundImage:`url(${AuthImage})`,width: '100%', display: 'flex', minHeight: '300px', alignItems: 'center', justifyContent: 'center',marginTop:100}}>
-                <Grid container spacing={6} className={classes1.gridContainer} style={{marginLeft:5,marginRight:5,marginTop:15,paddingBottom:100}}>
-                    <Grid item xs={12} md={3} style={{marginLeft:0}}>
+                <Grid container spacing={6} className={classes1.gridContainer} style={{marginLeft:0,marginRight:5,marginTop:15,paddingBottom:100}}>
+                    <Grid item xs={12} md={3} style={{marginLeft:-20}} >
                     <MainCard border={false} className={classes1.card} contentClass={classes1.content}>
                     <List className={classes1.padding}>
                         <ListItem alignItems="center" disableGutters className={classes1.padding}>

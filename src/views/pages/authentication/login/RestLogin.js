@@ -251,7 +251,7 @@ const RestLogin = (props, { ...others }) => {
                                     variant="contained"
                                     color="secondary"
                                 >
-                                    Sign IN
+                                    SIGN IN
                                 </Button>
                             </AnimateButton>
                         </Box>
