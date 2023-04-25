@@ -138,7 +138,7 @@ const Header = (props) => {
                           </Link>
                           </MenuItem>
                           <MenuItem>
-                          <Link href="/register" color="inherit" style={{textDecoration: 'none'}}>
+                          <Link href="/login" color="inherit" style={{textDecoration: 'none'}}>
                           <Typography textAlign="center">Dashboard</Typography>
                           </Link>
                           </MenuItem>
