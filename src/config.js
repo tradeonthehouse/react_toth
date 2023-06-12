@@ -3,6 +3,7 @@ if (process.env.REACT_APP_BACKEND_SERVER) {
   BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 } else {
   BACKEND_SERVER = "https://king-prawn-app-u6akm.ondigitalocean.app/api/";
+
 }
 
 const config = {

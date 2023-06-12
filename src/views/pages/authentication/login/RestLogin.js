@@ -118,6 +118,9 @@ const RestLogin = (props, { ...others }) => {
                                         type: ACCOUNT_INITIALIZE,
                                         payload: { isLoggedIn: true, user: response.data.user, token: response.data.token }
                                     });
+                                    localStorage.setItem('token', response.data.token);
+                                    localStorage.setItem('username', response.data.user.username);
+                                    localStorage.setItem('email', response.data.user.email);
                                     if (scriptedRef.current) {
                                         setStatus({ success: true });
                                         setSubmitting(false);
