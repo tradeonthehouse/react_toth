@@ -94,11 +94,11 @@ const market = [
     },
     {
         value: 'india',
-        label: 'India'
+        label: 'INDIA'
     },
     {
-        value: 'us',
-        label: 'US'
+        value: 'usa',
+        label: 'USA'
     },
 ];
 
@@ -123,24 +123,35 @@ const UploadFile = () => {
         if (event.target.files) {
             setFile(event.target.files[0]);
         }
-        console.log(file);
     };
 
     const handleSubmit = async () => {
-        const formData = new FormData();
-        formData.append('excel', file);
 
-        try {
-            const response = await axios.post(configData.API_SERVER + 'users/uploadmonthlymodel', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'Authorization': localStorage.getItem('token')
+        if(!file){
+            alert("Please select file which you want to upload.")
+        }else{
+            if(marketValue != 'null'){
+                const formData = new FormData();
+                formData.append('excel', file);
+                formData.append('market', marketValue);
+                console.log(formData)
+                try {
+                    const response = await axios.post(configData.API_SERVER + 'users/uploadmonthlymodel', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                            'Authorization': localStorage.getItem('token')
+                        }
+                    });
+                    alert(response.data.msg);   
+                } catch (error) {
+                    console.error(error);
                 }
-            });
-            alert(response.data.msg);   
-        } catch (error) {
-            console.error(error);
+            }else{
+                alert("Please select market type.")
+            }
+
         }
+
     };
 
     return (
