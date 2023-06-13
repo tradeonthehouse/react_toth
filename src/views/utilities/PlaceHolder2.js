@@ -117,7 +117,7 @@ const PlaceHolder2 = () => {
                                      ))} */}
                                       {alerts.slice().reverse().map((alert, index) => (
                                         <Grid key={index} container style={{position: 'relative' }}>
-                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ backgroundColor: 'white', margin: 0,border: '1px solid #ccc',borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px' }}>
+                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ backgroundColor: 'white', margin: 0,border: '1px solid black',borderTopLeftRadius: '5px',borderBottomLeftRadius: '5px' }}>
                                                 <Grid container spacing={gridSpacing}>
                                                     <Grid item lg={12} md={12} sm={12} xs={12}>
                                                         <p style={{fontSize:12,marginLeft:4,marginTop:0}}>Date : <span>{alert.alertDate}</span></p>
@@ -129,7 +129,7 @@ const PlaceHolder2 = () => {
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
-                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ position: 'relative', backgroundColor: alert.buyInitiateColor, display: 'flex', alignItems: 'center', justifyContent: 'center',borderTop: '1px solid #ccc',borderBottom: '1px solid #ccc' }}>
+                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ position: 'relative', backgroundColor: alert.buyInitiateColor, display: 'flex', alignItems: 'center', justifyContent: 'center',borderTop: '1px solid black',borderBottom: '1px solid black' }}>
                                                 <Grid container spacing={gridSpacing}>
                                                     <Grid item lg={12} md={12} sm={12} xs={12}>
                                                         <p style={{ fontSize: 15, marginLeft:10, fontWeight: 500, textAlign: 'center' }}>
@@ -138,7 +138,7 @@ const PlaceHolder2 = () => {
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
-                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ position: 'relative', backgroundColor: alert.buyTargetColor, display: 'flex', alignItems: 'center', justifyContent: 'center',border: '1px solid #ccc',borderTopRightRadius: '5px',borderBottomRightRadius: '5px' }}>
+                                            <Grid item lg={4} md={4} sm={4} xs={12} style={{ position: 'relative', backgroundColor: alert.buyTargetColor, display: 'flex', alignItems: 'center', justifyContent: 'center',border: '1px solid black',borderTopRightRadius: '5px',borderBottomRightRadius: '5px' }}>
                                                 <Grid container spacing={gridSpacing}>
                                                     <Grid item lg={12} md={12} sm={12} xs={12}>
                                                         <p style={{ fontSize: 15, marginLeft:10, fontWeight: 500, textAlign: 'center' }}>
