@@ -54,7 +54,7 @@ export const others = {
         },
         {
             id: 'place-holder2',
-            title: 'Place Holder2',
+            title: 'Market Alerts',
             type: 'item',
             url: '/utils/place-holder2',
             icon: icons['IconStars'],
